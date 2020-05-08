@@ -1,12 +1,12 @@
- 
-name: 'chaoxing'
+
+name: 'tuisong'
 
 on:
   push:
     branches: 
       - master
   schedule:
-    - cron: '*/3 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   get_points:
@@ -22,9 +22,6 @@ jobs:
       run: python -m pip install --upgrade requests
     - name: 'Qiandao'
       env:
-        CHAOXING_USERNAME: ${{ secrets.CHAOXING_USERNAME }}
-        CHAOXING_PASSWORD: ${{ secrets.CHAOXING_PASSWORD }}
-        CHAOXING_SCHOOL: ${{ secrets.CHAOXING_SCHOOL }}
         CHAOXING_SERVER: ${{ secrets.CHAOXING_SERVER }}
         CHAOXING_SERVEROR: ${{ secrets.CHAOXING_SERVEROR }}
       run: python cx.py
