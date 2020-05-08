@@ -1,9 +1,15 @@
-# coding=utf-8
+# encoding:utf-8
 import requests
-
-key = "SCU96822Teacece914c94643dea76cf03bf3750755eb399b023adf" # your-key
-url = "https://sc.ftqq.com/%s.send"%(key)
-headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'}
-
-payload = {'123': '上课提醒！！', 'desp': '上课时间：800'}
-requests.post(url, params=payload, headers=headers)
+import json
+token = 'c04f8d66e96046ff8d82e01c22ddb526' #在push+网站中可以找到
+title= '上课提醒！！' #改成你要的标题内容
+content ='课程名称：软件技术 时间：9点' #改成你要的正文内容
+url = 'http://pushplus.hxtrip.com/customer/push/send'
+data = {
+    "token":token,
+    "title":title,
+    "content":content
+}
+body=json.dumps(data).encode(encoding='utf-8')
+headers = {'Content-Type':'application/json'}
+requests.post(url,data=body,headers=headers)
