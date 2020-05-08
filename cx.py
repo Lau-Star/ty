@@ -18,9 +18,6 @@ server_chan = {
 	'url': 'https://sc.ftqq.com/{}.send'.format(server_chan_sckey)
 }
 
-# activeid保存文件路径
-activeid_path = "activeid.txt"
-
 # =================配置区end===================
 
 
